@@ -14,6 +14,10 @@
 		47BDE6851AC711D000F92AAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47BDE6841AC711D000F92AAE /* Images.xcassets */; };
 		47BDE6881AC711D000F92AAE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47BDE6861AC711D000F92AAE /* LaunchScreen.xib */; };
 		47BDE6941AC711D000F92AAE /* WeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE6931AC711D000F92AAE /* WeatherTests.m */; };
+		47BDE69F1AC7133F00F92AAE /* DWNetworkCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE69E1AC7133F00F92AAE /* DWNetworkCenter.m */; };
+		47BDE6A61AC744B500F92AAE /* DWWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE6A51AC744B500F92AAE /* DWWeather.m */; };
+		47BDE6AA1AC74CC300F92AAE /* TODO.md in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE6A91AC74CC300F92AAE /* TODO.md */; };
+		88D522F1E4F4A83F9E44D50F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD87AB715720790FF1AA62E0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,14 @@
 		47BDE68D1AC711D000F92AAE /* WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47BDE6921AC711D000F92AAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47BDE6931AC711D000F92AAE /* WeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherTests.m; sourceTree = "<group>"; };
+		47BDE69D1AC7133F00F92AAE /* DWNetworkCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWNetworkCenter.h; sourceTree = "<group>"; };
+		47BDE69E1AC7133F00F92AAE /* DWNetworkCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWNetworkCenter.m; sourceTree = "<group>"; };
+		47BDE6A41AC744B500F92AAE /* DWWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWWeather.h; sourceTree = "<group>"; };
+		47BDE6A51AC744B500F92AAE /* DWWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWWeather.m; sourceTree = "<group>"; };
+		47BDE6A91AC74CC300F92AAE /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		D91BAE548CC455ED6E53B8D8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FB89CF08878FF5E526B6CD26 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FD87AB715720790FF1AA62E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88D522F1E4F4A83F9E44D50F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,9 +76,12 @@
 		47BDE66B1AC711D000F92AAE = {
 			isa = PBXGroup;
 			children = (
+				47BDE6A91AC74CC300F92AAE /* TODO.md */,
 				47BDE6761AC711D000F92AAE /* Weather */,
 				47BDE6901AC711D000F92AAE /* WeatherTests */,
 				47BDE6751AC711D000F92AAE /* Products */,
+				7A2B1A01E42DFE4F9ADE2F7E /* Pods */,
+				DC2C75C37718CDA85C34DB2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +97,10 @@
 		47BDE6761AC711D000F92AAE /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				47BDE69D1AC7133F00F92AAE /* DWNetworkCenter.h */,
+				47BDE69E1AC7133F00F92AAE /* DWNetworkCenter.m */,
+				47BDE6A41AC744B500F92AAE /* DWWeather.h */,
+				47BDE6A51AC744B500F92AAE /* DWWeather.m */,
 				47BDE67B1AC711D000F92AAE /* AppDelegate.h */,
 				47BDE67C1AC711D000F92AAE /* AppDelegate.m */,
 				47BDE67E1AC711D000F92AAE /* ViewController.h */,
@@ -119,6 +139,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7A2B1A01E42DFE4F9ADE2F7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB89CF08878FF5E526B6CD26 /* Pods.debug.xcconfig */,
+				D91BAE548CC455ED6E53B8D8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DC2C75C37718CDA85C34DB2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD87AB715720790FF1AA62E0 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47BDE6971AC711D000F92AAE /* Build configuration list for PBXNativeTarget "Weather" */;
 			buildPhases = (
+				D12AA7D23226842C39EBDD35 /* Check Pods Manifest.lock */,
 				47BDE6701AC711D000F92AAE /* Sources */,
 				47BDE6711AC711D000F92AAE /* Frameworks */,
 				47BDE6721AC711D000F92AAE /* Resources */,
+				0C9900D550B8FC39B3D099B4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,13 +253,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C9900D550B8FC39B3D099B4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D12AA7D23226842C39EBDD35 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		47BDE6701AC711D000F92AAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47BDE6AA1AC74CC300F92AAE /* TODO.md in Sources */,
+				47BDE6A61AC744B500F92AAE /* DWWeather.m in Sources */,
 				47BDE6801AC711D000F92AAE /* ViewController.m in Sources */,
 				47BDE67D1AC711D000F92AAE /* AppDelegate.m in Sources */,
+				47BDE69F1AC7133F00F92AAE /* DWNetworkCenter.m in Sources */,
 				47BDE67A1AC711D000F92AAE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,21 +418,65 @@
 		};
 		47BDE6981AC711D000F92AAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB89CF08878FF5E526B6CD26 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Debug;
 		};
 		47BDE6991AC711D000F92AAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D91BAE548CC455ED6E53B8D8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Release;
 		};
@@ -414,6 +533,7 @@
 				47BDE6991AC711D000F92AAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47BDE69A1AC711D000F92AAE /* Build configuration list for PBXNativeTarget "WeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +542,7 @@
 				47BDE69C1AC711D000F92AAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
