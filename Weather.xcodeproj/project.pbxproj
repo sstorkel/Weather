@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		47BDE67A1AC711D000F92AAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE6791AC711D000F92AAE /* main.m */; };
 		47BDE67D1AC711D000F92AAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE67C1AC711D000F92AAE /* AppDelegate.m */; };
-		47BDE6801AC711D000F92AAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE67F1AC711D000F92AAE /* ViewController.m */; };
+		47BDE6801AC711D000F92AAE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE67F1AC711D000F92AAE /* RootViewController.m */; };
 		47BDE6831AC711D000F92AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47BDE6811AC711D000F92AAE /* Main.storyboard */; };
 		47BDE6851AC711D000F92AAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47BDE6841AC711D000F92AAE /* Images.xcassets */; };
 		47BDE6881AC711D000F92AAE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47BDE6861AC711D000F92AAE /* LaunchScreen.xib */; };
@@ -17,6 +17,7 @@
 		47BDE69F1AC7133F00F92AAE /* DWNetworkCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE69E1AC7133F00F92AAE /* DWNetworkCenter.m */; };
 		47BDE6A61AC744B500F92AAE /* DWWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE6A51AC744B500F92AAE /* DWWeather.m */; };
 		47BDE6AA1AC74CC300F92AAE /* TODO.md in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE6A91AC74CC300F92AAE /* TODO.md */; };
+		47BDE6AD1AC86B2A00F92AAE /* WeatherDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE6AC1AC86B2A00F92AAE /* WeatherDataViewController.m */; };
 		88D522F1E4F4A83F9E44D50F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD87AB715720790FF1AA62E0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -36,8 +37,8 @@
 		47BDE6791AC711D000F92AAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		47BDE67B1AC711D000F92AAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47BDE67C1AC711D000F92AAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		47BDE67E1AC711D000F92AAE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		47BDE67F1AC711D000F92AAE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		47BDE67E1AC711D000F92AAE /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		47BDE67F1AC711D000F92AAE /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		47BDE6821AC711D000F92AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47BDE6841AC711D000F92AAE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		47BDE6871AC711D000F92AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -49,6 +50,8 @@
 		47BDE6A41AC744B500F92AAE /* DWWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWWeather.h; sourceTree = "<group>"; };
 		47BDE6A51AC744B500F92AAE /* DWWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWWeather.m; sourceTree = "<group>"; };
 		47BDE6A91AC74CC300F92AAE /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		47BDE6AB1AC86B2A00F92AAE /* WeatherDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDataViewController.h; sourceTree = "<group>"; };
+		47BDE6AC1AC86B2A00F92AAE /* WeatherDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataViewController.m; sourceTree = "<group>"; };
 		D91BAE548CC455ED6E53B8D8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FB89CF08878FF5E526B6CD26 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FD87AB715720790FF1AA62E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,14 +100,10 @@
 		47BDE6761AC711D000F92AAE /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				47BDE69D1AC7133F00F92AAE /* DWNetworkCenter.h */,
-				47BDE69E1AC7133F00F92AAE /* DWNetworkCenter.m */,
-				47BDE6A41AC744B500F92AAE /* DWWeather.h */,
-				47BDE6A51AC744B500F92AAE /* DWWeather.m */,
+				47BDE6AE1AC86B3600F92AAE /* Model */,
+				47BDE6AF1AC86B4400F92AAE /* View Controllers */,
 				47BDE67B1AC711D000F92AAE /* AppDelegate.h */,
 				47BDE67C1AC711D000F92AAE /* AppDelegate.m */,
-				47BDE67E1AC711D000F92AAE /* ViewController.h */,
-				47BDE67F1AC711D000F92AAE /* ViewController.m */,
 				47BDE6811AC711D000F92AAE /* Main.storyboard */,
 				47BDE6841AC711D000F92AAE /* Images.xcassets */,
 				47BDE6861AC711D000F92AAE /* LaunchScreen.xib */,
@@ -137,6 +136,28 @@
 				47BDE6921AC711D000F92AAE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47BDE6AE1AC86B3600F92AAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				47BDE69D1AC7133F00F92AAE /* DWNetworkCenter.h */,
+				47BDE69E1AC7133F00F92AAE /* DWNetworkCenter.m */,
+				47BDE6A41AC744B500F92AAE /* DWWeather.h */,
+				47BDE6A51AC744B500F92AAE /* DWWeather.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		47BDE6AF1AC86B4400F92AAE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47BDE67E1AC711D000F92AAE /* RootViewController.h */,
+				47BDE67F1AC711D000F92AAE /* RootViewController.m */,
+				47BDE6AB1AC86B2A00F92AAE /* WeatherDataViewController.h */,
+				47BDE6AC1AC86B2A00F92AAE /* WeatherDataViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		7A2B1A01E42DFE4F9ADE2F7E /* Pods */ = {
@@ -293,7 +314,8 @@
 			files = (
 				47BDE6AA1AC74CC300F92AAE /* TODO.md in Sources */,
 				47BDE6A61AC744B500F92AAE /* DWWeather.m in Sources */,
-				47BDE6801AC711D000F92AAE /* ViewController.m in Sources */,
+				47BDE6AD1AC86B2A00F92AAE /* WeatherDataViewController.m in Sources */,
+				47BDE6801AC711D000F92AAE /* RootViewController.m in Sources */,
 				47BDE67D1AC711D000F92AAE /* AppDelegate.m in Sources */,
 				47BDE69F1AC7133F00F92AAE /* DWNetworkCenter.m in Sources */,
 				47BDE67A1AC711D000F92AAE /* main.m in Sources */,

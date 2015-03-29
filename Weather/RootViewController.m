@@ -6,17 +6,20 @@
 //  Copyright (c) 2015 Scott Storkel. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RootViewController.h"
 #import "DWNetworkCenter.h"
 #import "DWWeather.h"
+#import "WeatherDataViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface ViewController ()
+@interface RootViewController ()
 {
     IBOutlet UITextField* locationField;
     IBOutlet UIActivityIndicatorView* activity;
-    IBOutlet UITableView* tableView;
+    IBOutlet UIView* dataContainer;
+    
+    WeatherDataViewController* weatherVC;
     
     BOOL useCoreLocationCoords;
 }
@@ -24,7 +27,7 @@
 
 
 
-@implementation ViewController
+@implementation RootViewController
 
 - (void)viewDidLoad
 {
@@ -39,6 +42,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"embedWeather"]) {
+        // capture reference to weatherVC via the embedWeather segue
+        weatherVC = segue.destinationViewController;
+    }
+}
+
+- (void)refreshWeather
+{
+    
+}
+
 #pragma mark - Event-Handling
 
 - (IBAction)currentLocation:(id)sender
@@ -50,27 +66,20 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    NSLog(@"Done!");
     [activity startAnimating];
     
     DWNetworkCenter* network = [DWNetworkCenter sharedInstance];
     [network getWeatherForCity:textField.text completion:^(NSDictionary* dict) {
         [self->activity stopAnimating];
         
-        NSLog(@"%@", dict);
+        self->dataContainer.hidden = NO;
         DWWeather* currentWeather = [[DWWeather alloc] initWithJSON:dict];
+        self->weatherVC.currentWeather = currentWeather;
     }];
 }
 
-//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
-//{
-//    NSLog(@"editing");
-//    return (textField.text.length > 0);
-//}
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    NSLog(@"return");
     if (textField.text.length > 0)
         [textField resignFirstResponder];
     return NO;

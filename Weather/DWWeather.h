@@ -33,9 +33,11 @@
 
 @property (nonatomic, copy)   NSString* weatherIcon;
 @property (nonatomic, copy)   NSString* weatherDescription;
-@property (nonatomic, assign) int weatherID;
+@property (nonatomic, copy)   NSString* weatherID;
 @property (nonatomic, copy)   NSString* weatherSummary;
 
 - (instancetype)initWithJSON:(NSDictionary*)jsonData;
+- (NSString*)descriptionForWeatherID;
+- (NSString*)windDirectionString;
 
 @end
