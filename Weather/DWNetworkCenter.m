@@ -8,6 +8,7 @@
 
 #import "DWNetworkCenter.h"
 #import <AFNetworking/AFNetworking.h>
+#import <CoreLocation/CoreLocation.h>
 
 
 static const NSString* APPID = @"58abcad7dc09bfcd9d42b1f7a0e02e96";
@@ -44,7 +45,15 @@ static const NSString* APPID = @"58abcad7dc09bfcd9d42b1f7a0e02e96";
 
 - (void)getWeatherForLocation:(CLLocation*)location completion:(DWNetworkCompletionBlock)completionBlock
 {
+    NSString* url = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&APPID=%@&units=imperial", location.coordinate.latitude, location.coordinate.longitude, APPID];
     
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             completionBlock(responseObject);
+         }
+         failure:nil];
 }
 
 @end
