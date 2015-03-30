@@ -119,25 +119,39 @@
 
 - (void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
-    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [lm startUpdatingLocation];
-    } else {
-        [self handleAuthError];
+    NSLog(@"Authorization Status = %d", status);
+    
+    switch (status) {
+        case kCLAuthorizationStatusNotDetermined:
+            /* just ignore this */
+            break;
+            
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+        case kCLAuthorizationStatusAuthorizedAlways:
+            [lm startUpdatingLocation];
+            break;
+            
+        case kCLAuthorizationStatusRestricted:
+        case kCLAuthorizationStatusDenied:
+            [self handleAuthError];
+            break;
     }
 }
 
 - (void)locationManager:(CLLocationManager*)manager didUpdateLocations:(NSArray*)locations
 {
     NSLog(@"Location = %@", locations);
+    
     if (!locationField.isFirstResponder) {
         // Need to validate the new coordinate before we do anything else
         CLLocation* loc = locations.firstObject;
         if (loc.timestamp.timeIntervalSinceNow < -5*60)
+            // ignore coordinates more than 5 minutes old
             return;
         if (loc.horizontalAccuracy > kCLLocationAccuracyKilometer)
             return;
         
-        // Looks like the date is valid; get weather for current coords
+        // Looks like the data is valid; get weather for current coords
         [activity startAnimating];
         
         currentLocation = loc;
