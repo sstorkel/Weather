@@ -13,10 +13,13 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="iIZ-LZ-ftS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7h-2v-kbz">
                                 <rect key="frame" x="553" y="28" width="31" height="30"/>
                                 <state key="normal" image="Location">
@@ -36,6 +39,7 @@
                             </textField>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbg-Ig-F0W">
                                 <rect key="frame" x="0.0" y="66" width="600" height="534"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="nqQ-Ug-m77" kind="embed" identifier="embedWeather" id="G37-xD-dpU"/>
                                 </connections>
@@ -45,25 +49,37 @@
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="82W-2D-8hu" firstAttribute="centerY" secondItem="d7h-2v-kbz" secondAttribute="centerY" id="1Ct-4j-srZ"/>
+                            <constraint firstItem="iIZ-LZ-ftS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BCv-zP-265"/>
                             <constraint firstAttribute="centerY" secondItem="nC5-2P-svS" secondAttribute="centerY" id="Boe-Up-Aaf"/>
+                            <constraint firstAttribute="trailing" secondItem="iIZ-LZ-ftS" secondAttribute="trailing" id="CYd-JU-cFZ"/>
+                            <constraint firstItem="iIZ-LZ-ftS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="D41-7F-K6z"/>
                             <constraint firstItem="82W-2D-8hu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ECp-jY-jQs"/>
                             <constraint firstAttribute="trailing" secondItem="Rbg-Ig-F0W" secondAttribute="trailing" id="EPd-48-S2t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iIZ-LZ-ftS" secondAttribute="trailing" id="FfT-AM-e0B"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="iIZ-LZ-ftS" secondAttribute="bottom" id="IBY-9W-uuE"/>
                             <constraint firstItem="d7h-2v-kbz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LlW-AG-rr5"/>
                             <constraint firstItem="Rbg-Ig-F0W" firstAttribute="top" secondItem="82W-2D-8hu" secondAttribute="bottom" constant="8" id="T7R-yE-mlV"/>
                             <constraint firstAttribute="centerX" secondItem="nC5-2P-svS" secondAttribute="centerX" id="UxW-yc-IAv"/>
                             <constraint firstItem="d7h-2v-kbz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VE6-l4-vFB"/>
+                            <constraint firstItem="iIZ-LZ-ftS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bph-4y-sXJ"/>
                             <constraint firstItem="d7h-2v-kbz" firstAttribute="leading" secondItem="82W-2D-8hu" secondAttribute="trailing" constant="8" id="eDp-rR-CQH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rbg-Ig-F0W" secondAttribute="bottom" id="eYY-Ca-Fdp"/>
+                            <constraint firstItem="iIZ-LZ-ftS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="gpb-sa-ChB"/>
                             <constraint firstItem="Rbg-Ig-F0W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oNS-jJ-jdk"/>
+                            <constraint firstAttribute="bottom" secondItem="iIZ-LZ-ftS" secondAttribute="bottom" id="oUU-bA-qUc"/>
                             <constraint firstItem="82W-2D-8hu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="tpo-BH-fvT"/>
                             <constraint firstItem="Rbg-Ig-F0W" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="yxh-5e-cPe"/>
                             <constraint firstItem="Rbg-Ig-F0W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zeD-5r-dRe"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="D41-7F-K6z"/>
+                                <exclude reference="FfT-AM-e0B"/>
+                                <exclude reference="IBY-9W-uuE"/>
+                                <exclude reference="gpb-sa-ChB"/>
                                 <exclude reference="yxh-5e-cPe"/>
                                 <exclude reference="zeD-5r-dRe"/>
                                 <exclude reference="LlW-AG-rr5"/>
@@ -84,15 +100,15 @@
         <scene sceneID="6CI-SH-5MV">
             <objects>
                 <tableViewController id="nqQ-Ug-m77" customClass="WeatherDataViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rHV-2G-yHu">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rHV-2G-yHu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="534"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="nDD-E4-y6R">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="89" id="Dwa-AD-raJ">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="89" id="Dwa-AD-raJ">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dwa-AD-raJ" id="FBa-q4-imM">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -125,8 +141,9 @@
                                                 <constraint firstItem="ZhT-pY-RjM" firstAttribute="trailing" secondItem="FBa-q4-imM" secondAttribute="trailingMargin" id="we8-LJ-VTD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Buu-nB-VmL">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Buu-nB-VmL">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Buu-nB-VmL" id="Ot9-4M-b7G">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -164,8 +181,9 @@
                                                 <constraint firstItem="7vY-PK-ce9" firstAttribute="leading" secondItem="Ot9-4M-b7G" secondAttribute="leadingMargin" id="dYf-rS-fgC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="L8W-9X-oQg">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="L8W-9X-oQg">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L8W-9X-oQg" id="Ipe-sc-lR5">
@@ -204,8 +222,9 @@
                                                 <constraint firstAttribute="centerY" secondItem="HPe-ex-C7o" secondAttribute="centerY" id="muX-Zs-kRS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jzs-iQ-jVC">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jzs-iQ-jVC">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jzs-iQ-jVC" id="MLV-k0-HcB">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -243,8 +262,9 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="fmN-zq-91A" secondAttribute="trailing" id="sZL-3i-Xm4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wlm-i3-15T">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wlm-i3-15T">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wlm-i3-15T" id="ObR-jK-5FF">
@@ -275,8 +295,9 @@
                                                 <constraint firstItem="viX-mQ-kpI" firstAttribute="height" secondItem="Jiv-vo-PPF" secondAttribute="height" id="wYb-wI-a1z"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uN6-qc-Cpc">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uN6-qc-Cpc">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uN6-qc-Cpc" id="HBD-ef-wrQ">
@@ -307,8 +328,9 @@
                                                 <constraint firstAttribute="centerY" secondItem="zW8-bN-iLB" secondAttribute="centerY" id="yh6-4m-vde"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gSc-ps-JrJ">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gSc-ps-JrJ">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gSc-ps-JrJ" id="a9v-wj-VkP">
@@ -339,8 +361,9 @@
                                                 <constraint firstItem="Ieq-iG-8X7" firstAttribute="leading" secondItem="apt-Es-chE" secondAttribute="trailing" constant="8" id="vFe-j8-sBw"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MLm-cV-wSM">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MLm-cV-wSM">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MLm-cV-wSM" id="0ub-qJ-lMw">
@@ -371,8 +394,9 @@
                                                 <constraint firstItem="my0-m8-d0L" firstAttribute="leading" secondItem="0ub-qJ-lMw" secondAttribute="leadingMargin" id="xgQ-XY-lfZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="gbn-TE-d0p">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="gbn-TE-d0p">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gbn-TE-d0p" id="kVb-ie-naU">
@@ -389,6 +413,7 @@
                                                 <constraint firstItem="Wvk-0p-S9V" firstAttribute="leading" secondItem="kVb-ie-naU" secondAttribute="leadingMargin" id="qiV-rf-yOf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -398,6 +423,12 @@
                             <outlet property="delegate" destination="nqQ-Ug-m77" id="mWi-NR-SJE"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="vb1-af-Wqx">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshWeather:" destination="nqQ-Ug-m77" eventType="valueChanged" id="tIf-ex-zJC"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="humidityLabel" destination="fmN-zq-91A" id="KbZ-U3-aP0"/>
                         <outlet property="locationName" destination="ZhT-pY-RjM" id="t2w-BD-teQ"/>
@@ -417,6 +448,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="1024" height="1024"/>
         <image name="Location" width="31" height="30"/>
     </resources>
 </document>

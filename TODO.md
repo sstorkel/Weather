@@ -6,7 +6,6 @@ To Do
 
 Possible UI Enhancments
 =======================
-- Show cooridinates on map
 - Implement auto-completion when typing location name?
 - Background image tied to current weather conditions (_a la_ Apple Weather)
 
@@ -21,3 +20,8 @@ Location icons from:
 
 http://www.calvin-c.com/blog/location-icons/
 https://www.iconfinder.com/icons/183205/arrow_location_icon#size=128
+
+
+Background:
+
+http://commons.wikimedia.org/wiki/File:Appearance_of_sky_for_weather_forecast,_Dhaka,_Bangladesh.JPG

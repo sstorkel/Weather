@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6214" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -11,6 +11,9 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="t8Z-yC-2YA">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Scott Storkel. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
                     <rect key="frame" x="20" y="439" width="441" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -30,12 +33,25 @@
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
+                <constraint firstItem="t8Z-yC-2YA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Nia-NE-hwI"/>
+                <constraint firstAttribute="trailing" secondItem="t8Z-yC-2YA" secondAttribute="trailing" id="WHT-4z-l5y"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstItem="t8Z-yC-2YA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dgn-lq-1UH"/>
+                <constraint firstAttribute="bottom" secondItem="t8Z-yC-2YA" secondAttribute="bottom" id="fsx-Kp-o4e"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="t8Z-yC-2YA" secondAttribute="bottom" id="vVb-lh-t2d"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="vVb-lh-t2d"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="Background" width="1024" height="1024"/>
+    </resources>
 </document>

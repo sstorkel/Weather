@@ -81,4 +81,19 @@
     [refresh endRefreshing];
     
 }
+
+
+#pragma mark - UITableViewDelegate
+
+
+- (void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell*)cell forRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    // BUG: iPad seems to ignore backgroundColors set in Interface Builder for static
+    //      UITableViewCells. In order to work around this problem, we manually set
+    //      the backgroundColor here.
+    //
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        cell.backgroundColor = [UIColor clearColor];
+}
+
 @end
