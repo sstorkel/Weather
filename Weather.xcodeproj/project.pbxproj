@@ -16,10 +16,10 @@
 		47BDE6941AC711D000F92AAE /* WeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE6931AC711D000F92AAE /* WeatherTests.m */; };
 		47BDE69F1AC7133F00F92AAE /* DWNetworkCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE69E1AC7133F00F92AAE /* DWNetworkCenter.m */; };
 		47BDE6A61AC744B500F92AAE /* DWWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE6A51AC744B500F92AAE /* DWWeather.m */; };
-		47BDE6AA1AC74CC300F92AAE /* TODO.md in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE6A91AC74CC300F92AAE /* TODO.md */; };
 		47BDE6AD1AC86B2A00F92AAE /* WeatherDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BDE6AC1AC86B2A00F92AAE /* WeatherDataViewController.m */; };
 		47BDE6B21AC9028000F92AAE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BDE6B01AC9028000F92AAE /* CoreLocation.framework */; };
 		47BDE6B31AC9028000F92AAE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BDE6B11AC9028000F92AAE /* MapKit.framework */; };
+		47BDE6B71AC933C900F92AAE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 47BDE6B61AC933C900F92AAE /* LICENSE */; };
 		88D522F1E4F4A83F9E44D50F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD87AB715720790FF1AA62E0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +56,8 @@
 		47BDE6AC1AC86B2A00F92AAE /* WeatherDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataViewController.m; sourceTree = "<group>"; };
 		47BDE6B01AC9028000F92AAE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		47BDE6B11AC9028000F92AAE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		47BDE6B41AC9332700F92AAE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		47BDE6B61AC933C900F92AAE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D91BAE548CC455ED6E53B8D8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FB89CF08878FF5E526B6CD26 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FD87AB715720790FF1AA62E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +87,9 @@
 		47BDE66B1AC711D000F92AAE = {
 			isa = PBXGroup;
 			children = (
+				47BDE6B61AC933C900F92AAE /* LICENSE */,
 				47BDE6A91AC74CC300F92AAE /* TODO.md */,
+				47BDE6B41AC9332700F92AAE /* README.md */,
 				47BDE6761AC711D000F92AAE /* Weather */,
 				47BDE6901AC711D000F92AAE /* WeatherTests */,
 				47BDE6751AC711D000F92AAE /* Products */,
@@ -269,6 +273,7 @@
 			files = (
 				47BDE6831AC711D000F92AAE /* Main.storyboard in Resources */,
 				47BDE6881AC711D000F92AAE /* LaunchScreen.xib in Resources */,
+				47BDE6B71AC933C900F92AAE /* LICENSE in Resources */,
 				47BDE6851AC711D000F92AAE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,7 +325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47BDE6AA1AC74CC300F92AAE /* TODO.md in Sources */,
 				47BDE6A61AC744B500F92AAE /* DWWeather.m in Sources */,
 				47BDE6AD1AC86B2A00F92AAE /* WeatherDataViewController.m in Sources */,
 				47BDE6801AC711D000F92AAE /* RootViewController.m in Sources */,
