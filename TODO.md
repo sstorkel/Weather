@@ -1,9 +1,7 @@
 To Do
 =====
-- Implement pull-to-refresh for tableview
 - Implement caching: Open Weather Map suggests only 1 call per device per 10 minutes
-- Implement CoreLocation calls to look-up current location
-- Finish parsing of JSON data into DWWeather model object
+
 
 
 Possible UI Enhancments
@@ -15,5 +13,11 @@ Possible UI Enhancments
 
 Bugs
 ====
-- Sunrise and Sunset times are in GMT rather than local time
-- Air Pressure and wind speed are in wrong units
+
+
+Notes
+=====
+Location icons from:
+
+http://www.calvin-c.com/blog/location-icons/
+https://www.iconfinder.com/icons/183205/arrow_location_icon#size=128

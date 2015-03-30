@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface RootViewController : UIViewController <UITextFieldDelegate>
 
+@interface RootViewController : UIViewController <UITextFieldDelegate, CLLocationManagerDelegate>
 
+- (void)refreshWeather;
 @end
 
