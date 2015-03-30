@@ -9,6 +9,7 @@
 #import "WeatherDataViewController.h"
 #import "DWWeather.h"
 #import "RootViewController.h"
+#import <MapKit/MapKit.h>
 
 
 
@@ -24,6 +25,8 @@
     IBOutlet UILabel* sunriseLabel;
     IBOutlet UILabel* sunsetLabel;
     IBOutlet UILabel* pressureLabel;
+    
+    IBOutlet MKMapView* mapView;
 }
 @end
 
@@ -55,6 +58,9 @@
                                                       timeStyle:NSDateFormatterLongStyle];
     
     pressureLabel.text = [NSString stringWithFormat:@"%.1f inHg", _currentWeather.pressure];
+    
+    MKCoordinateRegion r = MKCoordinateRegionMakeWithDistance(_currentWeather.coordinates, 7500, 7500);
+    [mapView setRegion:r animated:YES];
 }
 
 
