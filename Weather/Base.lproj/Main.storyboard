@@ -17,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7h-2v-kbz">
-                                <rect key="frame" x="562" y="32" width="22" height="22"/>
-                                <state key="normal">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7h-2v-kbz">
+                                <rect key="frame" x="553" y="28" width="31" height="30"/>
+                                <state key="normal" image="Location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="82W-2D-8hu">
-                                <rect key="frame" x="16" y="28" width="538" height="30"/>
+                                <rect key="frame" x="16" y="28" width="529" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                 <connections>
@@ -71,7 +71,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activity" destination="nC5-2P-svS" id="9fr-7e-OfM"/>
                         <outlet property="dataContainer" destination="Rbg-Ig-F0W" id="WJU-ab-wLu"/>
+                        <outlet property="locationField" destination="82W-2D-8hu" id="QNu-qw-F7G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -395,4 +397,7 @@
             <point key="canvasLocation" x="416" y="511"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Location" width="31" height="30"/>
+    </resources>
 </document>
