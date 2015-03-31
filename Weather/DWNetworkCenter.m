@@ -37,7 +37,9 @@ static const NSString* APPID = @"58abcad7dc09bfcd9d42b1f7a0e02e96";
 
 - (void)getWeatherFromURL:(NSString*)url completion:(DWNetworkCompletionBlock)completionBlock
 {
+#ifdef DEBUG
     NSLog(@"%@", url);
+#endif
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     if (currentRequest) {

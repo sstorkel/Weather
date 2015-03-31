@@ -127,7 +127,9 @@
 
 - (void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
+#ifdef DEBUG
     NSLog(@"Authorization Status = %d", status);
+#endif
     
     switch (status) {
         case kCLAuthorizationStatusNotDetermined:
@@ -148,7 +150,9 @@
 
 - (void)locationManager:(CLLocationManager*)manager didUpdateLocations:(NSArray*)locations
 {
+#ifdef DEBUG
     NSLog(@"Location = %@", locations);
+#endif
     
     if (!locationField.isFirstResponder) {
         // Need to validate the new coordinate before we do anything else
