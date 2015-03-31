@@ -14,6 +14,12 @@
 static const NSString* APPID = @"58abcad7dc09bfcd9d42b1f7a0e02e96";
 
 
+@interface DWNetworkCenter ()
+{
+    AFHTTPRequestOperation* currentRequest;
+}
+@end
+
 
 @implementation DWNetworkCenter
 
@@ -31,15 +37,28 @@ static const NSString* APPID = @"58abcad7dc09bfcd9d42b1f7a0e02e96";
 
 - (void)getWeatherFromURL:(NSString*)url completion:(DWNetworkCompletionBlock)completionBlock
 {
+    NSLog(@"%@", url);
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             completionBlock(responseObject, nil);
-         }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             completionBlock(nil, error);
-         }];
+    if (currentRequest) {
+        // Our simple weather app can only have one open network request at a time,
+        // so if the user initiates a new request, we should cancel the existing
+        // request
+        //
+        NSLog(@"request cancelled");
+        [currentRequest cancel];
+    }
+    
+    currentRequest = [manager GET:url
+                       parameters:nil
+                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                              self->currentRequest = nil;
+                              completionBlock(responseObject, nil);
+                          }
+                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                              self->currentRequest = nil;
+                              completionBlock(nil, error);
+                          }];
 }
 
 - (void)getWeatherForCity:(NSString*)city completion:(DWNetworkCompletionBlock)completionBlock
