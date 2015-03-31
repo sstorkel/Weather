@@ -42,10 +42,9 @@ static const NSString* APPID = @"58abcad7dc09bfcd9d42b1f7a0e02e96";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     if (currentRequest) {
         // Our simple weather app can only have one open network request at a time,
-        // so if the user initiates a new request, we should cancel the existing
-        // request
+        // so if the user initiates a second request (ex: because the first request
+        // is taking forever), we should cancel the existing request
         //
-        NSLog(@"request cancelled");
         [currentRequest cancel];
     }
     

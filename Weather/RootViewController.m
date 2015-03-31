@@ -66,6 +66,7 @@
     };
     
     [activity startAnimating];
+    weatherVC.currentWeather = nil;
     
     if (useCoreLocationCoords) {
         [network getWeatherForLocation:currentLocation completion:completion];

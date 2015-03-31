@@ -37,30 +37,42 @@
 - (void)setCurrentWeather:(DWWeather*)weather
 {
     _currentWeather = weather;
+    if (_currentWeather == nil) {
+        [UIView animateWithDuration:1.0 animations:^{
+            self.view.alpha = 0.0;
+        }];
+    } else {
     
-    locationName.text = [NSString stringWithFormat:@"%@, %@", _currentWeather.locationName, _currentWeather.locationCountry];
-    summaryConditions.text = weather.descriptionForWeatherID;
-    
-    temperatureLabel.text = [NSString stringWithFormat:@"%1.1f° F", _currentWeather.temp];
-    
-    rainLabel.text = [NSString stringWithFormat:@"%.000f\" over the next 3 hours", _currentWeather.rain];
-    
-    humidityLabel.text = [NSString stringWithFormat:@"%1.f%%", _currentWeather.humidity];
-    
-    windLabel.text = [NSString stringWithFormat:@"%@ at %.1fmph", _currentWeather.windDirectionString, _currentWeather.windSpeed];
-    
-    sunriseLabel.text = [NSDateFormatter localizedStringFromDate:_currentWeather.sunrise
-                                                       dateStyle:NSDateFormatterNoStyle
-                                                       timeStyle:NSDateFormatterLongStyle];
-    
-    sunsetLabel.text = [NSDateFormatter localizedStringFromDate:_currentWeather.sunset
-                                                      dateStyle:NSDateFormatterNoStyle
-                                                      timeStyle:NSDateFormatterLongStyle];
-    
-    pressureLabel.text = [NSString stringWithFormat:@"%.1f inHg", _currentWeather.pressure];
-    
-    MKCoordinateRegion r = MKCoordinateRegionMakeWithDistance(_currentWeather.coordinates, 7500, 7500);
-    [mapView setRegion:r animated:YES];
+        locationName.text = [NSString stringWithFormat:@"%@, %@", _currentWeather.locationName, _currentWeather.locationCountry];
+        summaryConditions.text = weather.descriptionForWeatherID;
+        
+        temperatureLabel.text = [NSString stringWithFormat:@"%1.1f° F", _currentWeather.temp];
+        
+        rainLabel.text = [NSString stringWithFormat:@"%.000f\" over the next 3 hours", _currentWeather.rain];
+        
+        humidityLabel.text = [NSString stringWithFormat:@"%1.f%%", _currentWeather.humidity];
+        
+        windLabel.text = [NSString stringWithFormat:@"%@ at %.1fmph", _currentWeather.windDirectionString, _currentWeather.windSpeed];
+        
+        sunriseLabel.text = [NSDateFormatter localizedStringFromDate:_currentWeather.sunrise
+                                                           dateStyle:NSDateFormatterNoStyle
+                                                           timeStyle:NSDateFormatterLongStyle];
+        
+        sunsetLabel.text = [NSDateFormatter localizedStringFromDate:_currentWeather.sunset
+                                                          dateStyle:NSDateFormatterNoStyle
+                                                          timeStyle:NSDateFormatterLongStyle];
+        
+        pressureLabel.text = [NSString stringWithFormat:@"%.1f inHg", _currentWeather.pressure];
+        
+        MKCoordinateRegion r = MKCoordinateRegionMakeWithDistance(_currentWeather.coordinates, 7500, 7500);
+        [mapView setRegion:r animated:YES];
+        
+        if (self.view.alpha < 1.0) {
+            [UIView animateWithDuration:1.0 animations:^{
+                self.view.alpha = 1.0;
+            }];
+        }
+    }
 }
 
 
