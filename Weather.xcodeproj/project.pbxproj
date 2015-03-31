@@ -51,7 +51,6 @@
 		47BDE69E1AC7133F00F92AAE /* DWNetworkCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWNetworkCenter.m; sourceTree = "<group>"; };
 		47BDE6A41AC744B500F92AAE /* DWWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWWeather.h; sourceTree = "<group>"; };
 		47BDE6A51AC744B500F92AAE /* DWWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWWeather.m; sourceTree = "<group>"; };
-		47BDE6A91AC74CC300F92AAE /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		47BDE6AB1AC86B2A00F92AAE /* WeatherDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDataViewController.h; sourceTree = "<group>"; };
 		47BDE6AC1AC86B2A00F92AAE /* WeatherDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataViewController.m; sourceTree = "<group>"; };
 		47BDE6B01AC9028000F92AAE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -88,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				47BDE6B61AC933C900F92AAE /* LICENSE */,
-				47BDE6A91AC74CC300F92AAE /* TODO.md */,
 				47BDE6B41AC9332700F92AAE /* README.md */,
 				47BDE6761AC711D000F92AAE /* Weather */,
 				47BDE6901AC711D000F92AAE /* WeatherTests */,
