@@ -29,31 +29,30 @@ static const NSString* APPID = @"58abcad7dc09bfcd9d42b1f7a0e02e96";
     return theInstance;
 }
 
-- (void)getWeatherForCity:(NSString*)city completion:(DWNetworkCompletionBlock)completionBlock
+- (void)getWeatherFromURL:(NSString*)url completion:(DWNetworkCompletionBlock)completionBlock
 {
-    NSString* encodedCity = [city stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString* url = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?q=%@&APPID=%@&units=imperial", encodedCity, APPID];
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             completionBlock(responseObject);
+             completionBlock(responseObject, nil);
          }
-         failure:nil];
+         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             completionBlock(nil, error);
+         }];
+}
+
+- (void)getWeatherForCity:(NSString*)city completion:(DWNetworkCompletionBlock)completionBlock
+{
+    NSString* encodedCity = [city stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString* url = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?q=%@&APPID=%@&units=imperial", encodedCity, APPID];
+    [self getWeatherFromURL:url completion:completionBlock];
 }
 
 - (void)getWeatherForLocation:(CLLocation*)location completion:(DWNetworkCompletionBlock)completionBlock
 {
     NSString* url = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&APPID=%@&units=imperial", location.coordinate.latitude, location.coordinate.longitude, APPID];
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             completionBlock(responseObject);
-         }
-         failure:nil];
+    [self getWeatherFromURL:url completion:completionBlock];
 }
 
 @end

@@ -38,12 +38,6 @@
     useCoreLocationCoords = NO;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"embedWeather"]) {
@@ -52,16 +46,23 @@
     }
 }
 
+
 - (void)refreshWeather
 {
     DWNetworkCenter* network = [DWNetworkCenter sharedInstance];
-    DWNetworkCompletionBlock completion = ^(NSDictionary* dict) {
+    DWNetworkCompletionBlock completion = ^(NSDictionary* dict, NSError* error) {
         [self->activity stopAnimating];
         
-        self->dataContainer.hidden = NO;
-        DWWeather* currentWeather = [[DWWeather alloc] initWithJSON:dict];
-        self->weatherVC.currentWeather = currentWeather;
+        if (!error) {
+            self->dataContainer.hidden = NO;
+            DWWeather* currentWeather = [[DWWeather alloc] initWithJSON:dict];
+            self->weatherVC.currentWeather = currentWeather;
+        } else {
+            [self handleNetworkError:error];
+        }
     };
+    
+    [activity startAnimating];
     
     if (useCoreLocationCoords) {
         [network getWeatherForLocation:currentLocation completion:completion];
@@ -69,6 +70,7 @@
         [network getWeatherForCity:locationField.text completion:completion];
     }
 }
+
 
 #pragma mark - Event-Handling
 
@@ -94,11 +96,12 @@
     }
 }
 
+
 #pragma mark - Textfield Handlng
+
 
 - (void)textFieldDidEndEditing:(UITextField*)textField
 {
-    [activity startAnimating];
     [self refreshWeather];
 }
 
@@ -116,6 +119,7 @@
 
 
 #pragma mark - CLLocationManagerDelegate
+
 
 - (void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
@@ -152,11 +156,10 @@
             return;
         
         // Looks like the data is valid; get weather for current coords
-        [activity startAnimating];
-        
         currentLocation = loc;
         [lm stopUpdatingLocation];
         useCoreLocationCoords = YES;
+        
         [self refreshWeather];
     }
 }
@@ -170,6 +173,23 @@
                                           otherButtonTitles:nil];
     [alert show];
 }
+
+/*
+ * This code is identical to locationManager:didFailWithError: but conceptually
+ * we might want to handle network and CoreLocation errors differently (ex: by
+ * providing different error-messages, retry options, etc.) so we've kept the
+ * methods separate... for now.
+ */
+- (void)handleNetworkError:(NSError*)error
+{
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                    message:error.localizedDescription
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
 
 - (void)handleAuthError
 {
