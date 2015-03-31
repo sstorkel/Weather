@@ -11,7 +11,8 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-static const NSString* APPID = @"58abcad7dc09bfcd9d42b1f7a0e02e96";
+//static const NSString* APPID = @"58abcad7dc09bfcd9d42b1f7a0e02e96";
+static const NSString* APPID = @"";
 
 
 @interface DWNetworkCenter ()

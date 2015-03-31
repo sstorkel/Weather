@@ -4,7 +4,9 @@ Simple iOS weather app based on OpenWeatherMap APIs
 # Setup
 - Clone Github repository
 - Run ```pod install``` in root project directory
-- Open ```Weather.xcworkspace```, compile, and run
+- Open ```Weather.xcworkspace```, 
+- Edit ```DWNetworkCenter.m``` and set ```APPID``` to _your_ OpenWeatherMap API key
+- Compile, and run
 
 # Dependencies
 - [Cocoapods](http://www.cocoapods.org) -- package management
