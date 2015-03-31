@@ -47,6 +47,9 @@
 }
 
 
+#pragma mark -
+
+
 - (void)refreshWeather
 {
     DWNetworkCenter* network = [DWNetworkCenter sharedInstance];
@@ -74,11 +77,11 @@
 
 #pragma mark - Event-Handling
 
+
 - (IBAction)currentLocation:(id)sender
 {
     CLAuthorizationStatus authStatus = [CLLocationManager authorizationStatus];
     if (authStatus == kCLAuthorizationStatusDenied || authStatus == kCLAuthorizationStatusRestricted) {
-        // Can't use CoreLocation; prompt user to re-enable
         [self handleAuthError];
     } else {
         if (lm == nil) {
@@ -155,7 +158,12 @@
         if (loc.horizontalAccuracy > kCLLocationAccuracyKilometer)
             return;
         
-        // Looks like the data is valid; get weather for current coords
+        // Looks like the data is valid. Time to do two things:
+        // - tell CLLocationManager to stop delivering location updates, so we
+        //   can conserve power
+        //
+        // - refresh the weather forecast
+        //
         currentLocation = loc;
         [lm stopUpdatingLocation];
         useCoreLocationCoords = YES;
@@ -175,10 +183,10 @@
 }
 
 /*
- * This code is identical to locationManager:didFailWithError: but conceptually
- * we might want to handle network and CoreLocation errors differently (ex: by
- * providing different error-messages, retry options, etc.) so we've kept the
- * methods separate... for now.
+ * This code is virtually identical to locationManager:didFailWithError: but 
+ * conceptually we might want to handle network and CoreLocation errors differently 
+ * (ex: by providing different error-messages, retry options, etc.) so we've kept 
+ * the methods separate... for now.
  */
 - (void)handleNetworkError:(NSError*)error
 {
@@ -193,7 +201,10 @@
     }
 }
 
-
+/**
+ * Handle CoreLocation authorization errors, by prompting the suer to reenable
+ * Location Services via the Settings app
+ */
 - (void)handleAuthError
 {
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error"

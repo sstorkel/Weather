@@ -15,20 +15,20 @@
 
 @property (nonatomic, strong) NSDate* retrievalTime;
 
-@property (nonatomic, strong) NSDate* sunrise;
-@property (nonatomic, strong) NSDate* sunset;
+@property (nonatomic, strong) NSDate* sunrise;  // in GMT
+@property (nonatomic, strong) NSDate* sunset;   // in GMT
 @property (nonatomic, assign) CLLocationCoordinate2D coordinates;
 @property (nonatomic, copy)   NSString* locationName;
 @property (nonatomic, copy)   NSString* locationCountry;
-@property (nonatomic, assign) double humidity;
-@property (nonatomic, assign) double temp;
-@property (nonatomic, assign) double tempMin;
-@property (nonatomic, assign) double tempMax;
-@property (nonatomic, assign) double pressure;
+@property (nonatomic, assign) double humidity;  // % humidity
+@property (nonatomic, assign) double temp;      // In Fahrenheit
+@property (nonatomic, assign) double tempMin;   // In Fahrenheit
+@property (nonatomic, assign) double tempMax;   // In Fahrenheit
+@property (nonatomic, assign) double pressure;  // In inches of mercury (inHG)
 @property (nonatomic, assign) double rain;
 
-@property (nonatomic, assign) double windSpeed;
-@property (nonatomic, assign) double windGust;
+@property (nonatomic, assign) double windSpeed; // In miles/hour
+@property (nonatomic, assign) double windGust;  // in miles/hour
 @property (nonatomic, assign) int windDirection;
 
 @property (nonatomic, copy)   NSString* weatherIcon;

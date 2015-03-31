@@ -68,6 +68,7 @@
 {
     [super viewDidLoad];
     
+    // prevent UITableView from complaining about zero-height rows
     self.tableView.rowHeight = 44;
 }
 
@@ -79,7 +80,6 @@
     [root refreshWeather];
     
     [refresh endRefreshing];
-    
 }
 
 
